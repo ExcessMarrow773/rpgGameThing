@@ -1,0 +1,1 @@
+{'roomName': 'Bedroom', 'description': 'A Simple Bedroom with a bed, a desk, and some chairs.'}
