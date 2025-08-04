@@ -1,8 +1,8 @@
 #from battle import Battle
+import colorama
 from player import Player
 from ui import UI
 import items
-import colorama
 #import time
 
 UI = UI()
@@ -10,7 +10,7 @@ PLAYER = Player(name='Atticus')
 player = PLAYER.createPlayer({'maxHp': 100})
 UI.UI(player)
 
-def p(input, player=player):
+def p(input):
 	UI.UI(player, input)
 
 commands = ['exit', 'UI', 'showInvintory', 'takeItem', 'history', 'help']
