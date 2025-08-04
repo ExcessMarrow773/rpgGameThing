@@ -12,9 +12,20 @@ class roomFiles:
 	def parseRoom(self):
 		return parse.parse(self.fileContents, '\n')
 
-	def temp(self)
+	def temp(self):
+		words = []
+		tmp = ""
+		for i in range(len(self.fileContents)):
+			if self.fileContents[i] == '/':
+				words.append(tmp)
+				tmp = ""
+			else:
+				if self.fileContents[i] == '\n': pass
+				else: tmp += self.fileContents[i]
+		print(words)
 
 if __name__ == '__main__':
 	file = roomFiles("roomTree.txt")
 	print(file.fileContents)
 	print(file.parseRoom())
+	file.temp()
