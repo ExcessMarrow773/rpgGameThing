@@ -19,9 +19,8 @@ class roomFiles:
 			if self.fileContents[i] == '/':
 				words.append(tmp)
 				tmp = ""
-			else:
-				if self.fileContents[i] == '\n': pass
-				else: tmp += self.fileContents[i]
+			elif self.fileContents[i] != "\n":
+				tmp += self.fileContents[i]
 		print(words)
 
 if __name__ == '__main__':
