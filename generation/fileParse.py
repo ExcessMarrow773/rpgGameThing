@@ -13,18 +13,44 @@ class roomFiles:
 		return parse.parse(self.fileContents, '\n')
 
 	def temp(self):
-		words = []
+		words = self.parseRoom()
 		tmp = ""
-		for i in range(len(self.fileContents)):
-			if self.fileContents[i] == '/':
-				words.append(tmp)
-				tmp = ""
-			elif self.fileContents[i] != "\n":
-				tmp += self.fileContents[i]
-		print(words)
+		rooms = {}
+		for i in range(len(words)):
+			layer = 1
+			for d in str(words[i]):
+				if d == "-":
+					layer += 1
+				else:
+					break
+			if layer != 1:
+				g = 1
+				while True:
+					if rooms[str(words[g][layer-1:len(words[i])-1]["layer"] == (layer-1):
+						rooms[str(words[g][layer-1:len(words[i])-1]["children"][str(words[i][layer-1:len(words[i])-1])] = {"children": [], "layer": layer}
+			else:
+				rooms[str(words[i][layer-1:len(words[i])-1])] = {"children": [], "layer": layer}
+		return rooms
+
+rooms = {
+	"kitchen": {
+		"children": {
+			"bathroom": {
+				"children": None
+				}
+			}
+		},
+	"bedroom": {
+		"children": None
+		}
+	}
 
 if __name__ == '__main__':
 	file = roomFiles("roomTree.txt")
 	print(file.fileContents)
 	print(file.parseRoom())
-	file.temp()
+	print(file.temp())
+	if file.temp() == rooms:
+		print("\n\nIt works!")
+	else:
+		print("\n\nIt doesnt work :(")
