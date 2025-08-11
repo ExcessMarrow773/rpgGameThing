@@ -208,3 +208,6 @@ __marimo__/
 
 # Nano things
 .*.swp
+
+# Git Diff
+diff.txt
